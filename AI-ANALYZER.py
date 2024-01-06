@@ -127,7 +127,7 @@ if (selected == 'AI-ANALYZER'):
 # Streamlit app title and description
 st.markdown("<h1 style='text-align: center;'>Medical Diagnostic AI-Analyzer</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Enter patient information to receive a diagnostic recommendation</p>", unsafe_allow_html=True)
-st.divider()
+st.markdown("---")
 
 
 col1, col2, col3 = st.columns(3, gap="large")
