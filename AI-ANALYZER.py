@@ -107,9 +107,7 @@ def ai_analyzer():
         
     
     
-    code = """
-    "https://multiplediseasedetector.streamlit.app/"
-    """
+    code = """https://multiplediseasedetector.streamlit.app/"""
     
     # Display the code in the sidebar using markdown
     st.sidebar.markdown("```python\n{}\n```".format(code))
@@ -284,9 +282,7 @@ def medical_chatbot():
             
     
     
-    code = """
-    "https://multiplediseasedetector.streamlit.app/"
-    """
+    code = """https://multiplediseasedetector.streamlit.app/"""
     
     # Display the code in the sidebar using markdown
     st.sidebar.markdown("```python\n{}\n```".format(code))
