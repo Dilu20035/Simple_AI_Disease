@@ -276,6 +276,8 @@ def medical_chatbot():
  
     # Execute the code and display its output in the sidebar
     with st.sidebar:
+    if (selected == 'MEDICAL-CHATBOT'):
+        st.title("")
 
     def get_initial_message():
         messages=[
