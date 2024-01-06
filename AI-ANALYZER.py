@@ -89,11 +89,6 @@ def ai_analyzer():
     openai.api_key = os.getenv('OPENAI_API_KEY')
     
     with st.sidebar:   
-        selected = option_menu('',['AI-ANALYZER'],
-                              icons=['person'],
-                              default_index=0,
-                              
-                              )
         st_lottie(
                                lottie_coding,
                                speed=1,
@@ -108,10 +103,7 @@ def ai_analyzer():
     
         
     # Execute the code and display its output in the sidebar
-    with st.sidebar:
-        if selected == 'AI-ANALYZER':
-    
-    
+   
     # Streamlit app title and description
     st.markdown("<h1 style='text-align: center;'>Medical Diagnostic AI-Analyzer</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center;'>Enter patient information to receive a diagnostic recommendation</p>", unsafe_allow_html=True)
@@ -254,11 +246,6 @@ def medical_chatbot():
     
     
     with st.sidebar:   
-        selected = option_menu('',['MEDICAL-CHATBOT'],
-                              icons=['person'],
-                              default_index=0,
-                              
-                              )
         st_lottie(
                                lottie_coding,
                                speed=1,
@@ -274,9 +261,6 @@ def medical_chatbot():
     
  
     # Execute the code and display its output in the sidebar
-    with st.sidebar:
-        if selected == 'MEDICAL-CHATBOT':
-
     def get_initial_message():
         messages=[
                 {"role": "system", "content": "You are a helpful Medical Diagnostic AI Doctor. Who anwers brief questions about Diseases, Symptomps and medical findings."},
