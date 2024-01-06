@@ -130,7 +130,7 @@ st.markdown("<p style='text-align: center;'>Enter patient information to receive
 st.markdown("...")
 
 
-col1, col2, col3 = st.columns(3, gap="large")
+col1, col2, col3 = st.columns(3)
 
 # User inputs
 with col1:
