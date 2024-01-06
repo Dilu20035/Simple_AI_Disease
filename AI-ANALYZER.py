@@ -127,7 +127,7 @@ if (selected == 'AI-ANALYZER'):
 # Streamlit app title and description
 st.markdown("<h1 style='text-align: center;'>Medical Diagnostic AI-Analyzer</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Enter patient information to receive a diagnostic recommendation</p>", unsafe_allow_html=True)
-st.divider()
+st.markdown("...")
 
 
 col1, col2, col3 = st.columns(3, gap="large")
@@ -174,7 +174,7 @@ if st.button("Analyze"):
         st.write(response["choices"][0]["text"])
 
         # Display a note
-        st.divider()
+        st.markdown("...")
         st.info(
             "Disclaimer: The diagnostic recommendation provided here is generated based on the information provided "
             "and is not a substitute for professional medical advice. It is important to note that this system does not "
@@ -182,6 +182,6 @@ if st.button("Analyze"):
             "a precise and reliable diagnosis. Your health and well-being are of utmost importance, and a medical expert "
             "can provide personalized guidance based on a thorough examination of your specific situation."
         )
-        st.divider()
+        st.markdown("...")
     else:
         st.warning("Please enter symptoms before analyzing.")
