@@ -130,7 +130,7 @@ st.markdown("<p style='text-align: center;'>Enter patient information to receive
 st.markdown("---")
 
 
-col1, col2, col3 = st.columns(3, gap="large")
+col1, col2, col3 = st.columns(3)
 
 # User inputs
 with col1:
@@ -174,7 +174,7 @@ if st.button("Analyze"):
         st.write(response["choices"][0]["text"])
 
         # Display a note
-        st.divider()
+        st.markdown("---")
         st.info(
             "Disclaimer: The diagnostic recommendation provided here is generated based on the information provided "
             "and is not a substitute for professional medical advice. It is important to note that this system does not "
@@ -182,6 +182,6 @@ if st.button("Analyze"):
             "a precise and reliable diagnosis. Your health and well-being are of utmost importance, and a medical expert "
             "can provide personalized guidance based on a thorough examination of your specific situation."
         )
-        st.divider()
+        st.markdown("---")
     else:
         st.warning("Please enter symptoms before analyzing.")
