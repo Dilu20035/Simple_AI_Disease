@@ -109,7 +109,7 @@ def ai_analyzer():
         
     # Execute the code and display its output in the sidebar
     with st.sidebar:
-    if selected == 'AI-ANALYZER':
+        if selected == 'AI-ANALYZER':
         st.title("")
     
     
@@ -276,7 +276,7 @@ def medical_chatbot():
  
     # Execute the code and display its output in the sidebar
     with st.sidebar:
-    if selected == 'MEDICAL-CHATBOT':
+        if selected == 'MEDICAL-CHATBOT':
         st.title("")
 
     def get_initial_message():
@@ -317,8 +317,6 @@ def medical_chatbot():
     load_dotenv()
     openai.api_key = os.getenv('OPENAI_API_KEY')
     
-    if (selected == 'MEDICAL-CHATBOT'):
-        st.title("")
     
     st.markdown("<h1 style='text-align: center;'>Medical Chatbot</h1>", unsafe_allow_html=True)
     st.markdown("---")
