@@ -110,7 +110,6 @@ def ai_analyzer():
     # Execute the code and display its output in the sidebar
     with st.sidebar:
         if selected == 'AI-ANALYZER':
-        st.title("")
     
     
     # Streamlit app title and description
@@ -277,7 +276,6 @@ def medical_chatbot():
     # Execute the code and display its output in the sidebar
     with st.sidebar:
         if selected == 'MEDICAL-CHATBOT':
-        st.title("")
 
     def get_initial_message():
         messages=[
