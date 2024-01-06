@@ -106,18 +106,9 @@ def ai_analyzer():
                                )
         
     
-    
-    code = """https://multiplediseasedetector.streamlit.app/"""
-    
-    # Display the code in the sidebar using markdown
-    st.sidebar.markdown("```python\n{}\n```".format(code))
-    
+        
     # Execute the code and display its output in the sidebar
     with st.sidebar:
-        exec(code)
-    
-    
-    
     if (selected == 'AI-ANALYZER'):
         st.title("")
     
@@ -282,16 +273,10 @@ def medical_chatbot():
             
     
     
-    code = """https://multiplediseasedetector.streamlit.app/"""
-    
-    # Display the code in the sidebar using markdown
-    st.sidebar.markdown("```python\n{}\n```".format(code))
-    
+ 
     # Execute the code and display its output in the sidebar
     with st.sidebar:
-        exec(code)
-    
-    
+
     def get_initial_message():
         messages=[
                 {"role": "system", "content": "You are a helpful Medical Diagnostic AI Doctor. Who anwers brief questions about Diseases, Symptomps and medical findings."},
