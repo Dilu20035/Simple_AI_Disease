@@ -117,55 +117,33 @@ with st.sidebar:
 
 
 def get_initial_message():
-    messages=[
-            {"role": "system", "content": "You are a helpful Medical Diagnostic AI Doctor. Who anwers brief questions about Diseases, Symptomps and medical findings."},
-            {"role": "user", "content": "I want to know about my disease"},
-            {"role": "assistant", "content": "Thats awesome, what do you want to know about medical conditions"}
-        ]
-    return messages
+    return [
+        {"role": "system", "content": "You are a helpful Medical Diagnostic AI Doctor. Who answers brief questions about Diseases, Symptoms, and medical findings."},
+        {"role": "user", "content": "I want to know about my disease"},
+        {"role": "assistant", "content": "That's awesome, what do you want to know about medical conditions?"}
+    ]
 
 def get_chatgpt_response(messages, model="gpt-3.5-turbo"):
-    print("model: ", model)
-    response = openai.ChatCompletion.create(
-    model=model,
-    messages=messages
-    )
-    return  response['choices'][0]['message']['content']
+    try:
+        response = openai.ChatCompletion.create(
+            model=model,
+            messages=messages
+        )
+        return response['choices'][0]['message']['content']
+    except openai.error.OpenAIError as e:
+        st.error(f"OpenAI Error: {e}")
+        return "Apologies, there's an issue fetching the response."
 
 def update_chat(messages, role, content):
     messages.append({"role": role, "content": content})
     return messages
-# Function to update and display response
-def update_and_display_response(query, model):
-    messages = st.session_state['messages']
-    messages = update_chat(messages, "user", query)
-    response = get_chatgpt_response(messages, model)
-    messages = update_chat(messages, "assistant", response)
-    st.session_state.past.append(query)
-    st.session_state.generated.append(response)
 
-# Function to display chat history
-def display_chat_history():
-    for i in range(len(st.session_state['generated']) - 1, -1, -1):
-        message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
-        message(st.session_state["generated"][i], key=str(i))
+# Streamlit UI elements and interactions
+st.title("Medical Chatbot")
 
-# Load environment variables
-load_dotenv()
-openai.api_key = os.getenv('OPENAI_API_KEY')
-
-if (selected == 'MEDICAL-CHATBOT'):
-    st.title("")
-
-st.markdown("<h1 style='text-align: center;'>Medical Chatbot</h1>", unsafe_allow_html=True)
-st.markdown("")
-
-st.subheader("Ask Medical-Related Questions:")
-
-# ChatGPT Model selection
+# Select model for ChatGPT
 model = st.selectbox("ChatGPT Model", ("gpt-3.5-turbo",))
 
-# Initialize session state if not present
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
 if 'past' not in st.session_state:
@@ -173,18 +151,18 @@ if 'past' not in st.session_state:
 if 'messages' not in st.session_state:
     st.session_state['messages'] = get_initial_message()
 
-# Default medical prompt
 query = st.text_input("Ask a medical question: ", key="input", value="What are the symptoms of a common cold?")
 
-# Check if there's a default query and generate response on app start
-if query and 'generated' not in st.session_state:
-    update_and_display_response(query, model)
-
-# Handle user input and generate response
 if query:
     with st.spinner("Generating response..."):
-        update_and_display_response(query, model)
+        messages = st.session_state['messages']
+        messages = update_chat(messages, "user", query)
+        response = get_chatgpt_response(messages, model)
+        messages = update_chat(messages, "assistant", response)
+        st.session_state.past.append(query)
+        st.session_state.generated.append(response)
 
-# Display chat history
 if st.session_state['generated']:
-    display_chat_history()
+    for i in range(len(st.session_state['generated']) - 1, -1, -1):
+        st.write(f"User: {st.session_state['past'][i]}")
+        st.write(f"Bot: {st.session_state['generated'][i]}")
