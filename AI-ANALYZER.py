@@ -3,7 +3,6 @@ from streamlit_option_menu import option_menu
 from streamlit_lottie import st_lottie
 import os
 from dotenv import load_dotenv
-import requests
 import openai
 
 
