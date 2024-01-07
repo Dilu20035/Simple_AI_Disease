@@ -41,7 +41,7 @@ st.markdown(
     """
     <style>
     :root {
-        --primary-color: rgba(76,68,182,0.808);
+        --primary-color: #403a97;
         --background-color: #002b36;
         --secondary-background-color: #586e75;
         --text-color: #fafafa;
