@@ -16,7 +16,7 @@ st.markdown("""
     <div class="collapse navbar-collapse justify-content-center align-items-center " id="navbarNav">
         <ul class="navbar-nav ">
             <li class="nav-item active" style="margin-right: 45rem; font-size: 1.2rem;">
-                <a class="nav-link " href="#"><b> Medical Diagnostic AI-Analyzer </b><span class="sr-only">(current)</span></a>
+                <a class="nav-link " href="#"><b> AI-Analyzer </b><span class="sr-only">(current)</span></a>
             </li>
             <li>
                 <div>
