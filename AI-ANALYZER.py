@@ -44,7 +44,7 @@ st.markdown(
         --primary-color: #403a97;
         --background-color: #002b36;
         --secondary-background-color: #586e75;
-        --text-color: #000000;
+        --text-color: #fafafa;
         --font: sans-serif;
     }
     </style>
