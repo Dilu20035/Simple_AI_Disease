@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from streamlit_lottie import st_lottie
+import requests
 import os
 from dotenv import load_dotenv
 import openai
