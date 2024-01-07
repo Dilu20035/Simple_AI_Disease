@@ -121,11 +121,11 @@ with st.sidebar:
 
 
 if (selected == 'AI-ANALYZER'):
-st.title("")
-# Streamlit app title and description
-st.markdown("<h1 style='text-align: center;'>Medical Diagnostic AI-Analyzer</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>Enter patient information to receive a diagnostic recommendation</p>", unsafe_allow_html=True)
-st.markdown("")
+    st.title("")
+    # Streamlit app title and description
+    st.markdown("<h1 style='text-align: center;'>Medical Diagnostic AI-Analyzer</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'>Enter patient information to receive a diagnostic recommendation</p>", unsafe_allow_html=True)
+    st.markdown("")
 
 
 col1, col2, col3 = st.columns(3)
