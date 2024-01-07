@@ -121,8 +121,6 @@ with st.sidebar:
 
 
 if (selected == 'AI-ANALYZER'):
-    st.title("")
-st.title("")
 st.title("")
 # Streamlit app title and description
 st.markdown("<h1 style='text-align: center;'>Medical Diagnostic AI-Analyzer</h1>", unsafe_allow_html=True)
