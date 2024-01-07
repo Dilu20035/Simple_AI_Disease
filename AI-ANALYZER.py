@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 import openai
 
 
-st.set_page_config(page_title="HDA-AI-ANALYZER", page_icon=None, layout="centered", initial_sidebar_state="expanded", menu_items=None)
+st.set_page_config(page_title="HDA-AI-ANALYZER", page_icon=None, layout="wide", initial_sidebar_state="expanded", menu_items=None)
 
 st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
 
