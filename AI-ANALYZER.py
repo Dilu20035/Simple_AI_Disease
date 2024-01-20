@@ -30,11 +30,7 @@ st.markdown("""
 
 """, unsafe_allow_html=True)
 
-#<li class="nav-item">
-#                <a class="nav-link" href="https://youtube.com/dataprofessor" target="_blank">YouTube</a>
-#            </li>
 
-    
 
 # Set the theme colors
 st.markdown(
