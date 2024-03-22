@@ -159,7 +159,7 @@ if st.button("Analyze"):
         with st.spinner("Generating diagnostic details..."):
             # Make API call to OpenAI
             response = openai.Completion.create(
-                engine="gpt-3.5-turbo-0125",  # Use Codex engine for code-based tasks
+                engine="gpt-3.5-turbo",  # Use Codex engine for code-based tasks
                 prompt=f"Patient with the following information:\n\n{report}\n\nProvide diagnostic name, precautions and a large brief explanation about the found diagnostic.",
                 max_tokens=300
             )
